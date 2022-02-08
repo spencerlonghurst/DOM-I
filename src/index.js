@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const siteContent = { // DO NOT CHANGE THIS OBJECT
   "nav": {
     "nav-item-1": "Services",
@@ -39,4 +40,80 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
   },
 };
 
-console.log('project wired!')
+
+// Header Section
+
+const nav = document.querySelectorAll('nav a');
+const navTexts = Object.values(siteContent.nav);
+nav.forEach((link, i) => {
+  link.textContent = navTexts[i];
+  link.classList.add('italic')
+});
+
+// nav.querySelector('a:nth-of-type(1)').textContent = siteContent['nav']['nav-item-1'];
+// contact.querySelector('p:nth-of-type(1)').textContent = siteContent['contact']['address'];
+
+
+
+const logo = document.querySelector('header img');
+logo.src = siteContent['images']['logo-img'];
+
+
+
+
+
+
+// CTA Section
+
+const ctaImg = document.querySelector('.cta img');
+ctaImg.src = siteContent['images']['cta-img'];
+
+const h1 = document.querySelector('.cta-text h1');
+h1.textContent = siteContent['cta']['h1'];
+
+const button = document.querySelector('.cta-text button');
+button.textContent = siteContent['cta']['button'];
+
+
+
+
+
+
+
+// Main Content 
+
+const topContent = document.querySelector('.top-content');
+const h4Top = topContent.querySelectorAll('h4');
+h4Top[0].textContent = siteContent['main-content']['features-h4'];
+h4Top[1].textContent = siteContent['main-content']['about-h4'];
+const pTop = topContent.querySelectorAll('p');
+pTop[0].textContent = siteContent['main-content']['features-content'];
+pTop[1].textContent = siteContent['main-content']['about-content'];
+
+const mainImg = document.querySelector('.main-content img');
+mainImg.src = siteContent['images']['accent-img'];
+
+const bottomContent = document.querySelector('.bottom-content')
+const h4Bottom = bottomContent.querySelectorAll('h4');
+h4Bottom[0].textContent = siteContent['main-content']['services-h4'];
+h4Bottom[1].textContent = siteContent['main-content']['product-h4'];
+h4Bottom[2].textContent = siteContent['main-content']['vision-h4'];
+const pBottom = bottomContent.querySelectorAll('p');
+pBottom[0].textContent = siteContent['main-content']['services-content'];
+pBottom[1].textContent = siteContent['main-content']['product-content'];
+pBottom[2].textContent = siteContent['main-content']['vision-content'];
+
+
+// Contact Section
+
+const contact = document.querySelector('section.contact');
+contact.querySelector('h4').textContent = siteContent['contact']['contact-h4'];
+contact.querySelector('p:nth-of-type(1)').textContent = siteContent['contact']['address'];
+contact.querySelector('p:nth-of-type(2)').textContent = siteContent['contact']['phone'];
+contact.querySelector('p:nth-of-type(3)').textContent = siteContent['contact']['email'];
+
+// Footer Section
+
+const footer = document.querySelector('footer a');
+footer.textContent = siteContent['footer']['copyright'];
+footer.classList.add('bold');
